@@ -5,9 +5,11 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import PromptAgentDefinition
 
-# Load environment variables from .env file
-load_dotenv()
+# # Load environment variables from .env file
+# load_dotenv()
 
+os.environ["AZURE_AI_PROJECT_ENDPOINT"] = "https://aisdemohubrtd4.services.ai.azure.com/api/projects/first-foundry-project"
+os.environ["AGENT_NAME"] = "myRagAgent"
 # Read instructions from prompt file
 prompt_file = Path(__file__).parent / 'prompts' / 'v1_instructions.txt'
 with open(prompt_file, 'r') as f:
@@ -21,7 +23,7 @@ project_client = AIProjectClient(
 agent = project_client.agents.create_version(
     agent_name=os.environ["AGENT_NAME"],
     definition=PromptAgentDefinition(
-        model=os.getenv("MODEL_NAME", "gpt-5.1"),  # Use Global Standard model
+        model=os.getenv("MODEL_NAME", "gpt-4.1-mini"),  # Use Global Standard model
         instructions=instructions,
     ),
 )
