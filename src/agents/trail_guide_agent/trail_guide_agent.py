@@ -11,7 +11,7 @@ from azure.ai.projects.models import PromptAgentDefinition
 os.environ["AZURE_AI_PROJECT_ENDPOINT"] = "https://aisdemohubrtd4.services.ai.azure.com/api/projects/first-foundry-project"
 os.environ["AGENT_NAME"] = "myRagAgent"
 # Read instructions from prompt file
-prompt_file = Path(__file__).parent / 'prompts' / 'v1_instructions.txt'
+prompt_file = Path(__file__).parent / 'prompts' / 'v2_instructions.txt'
 with open(prompt_file, 'r') as f:
     instructions = f.read().strip()
 
