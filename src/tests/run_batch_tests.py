@@ -16,8 +16,11 @@ from dotenv import load_dotenv
 from azure.identity import DefaultAzureCredential
 from azure.ai.projects import AIProjectClient
 
-# Load environment variables from .env file
-load_dotenv()
+# # Load environment variables from .env file
+# load_dotenv()
+
+os.environ["AZURE_AI_PROJECT_ENDPOINT"] = "https://aisdemohubrtd4.services.ai.azure.com/api/projects/first-foundry-project"
+os.environ["AGENT_NAME"] = "myRagAgent"
 
 def load_test_prompts(test_prompts_dir):
     """Load all test prompt files from the test-prompts directory."""
