@@ -9,7 +9,7 @@ from azure.ai.projects.models import PromptAgentDefinition
 # load_dotenv()
 
 os.environ["AZURE_AI_PROJECT_ENDPOINT"] = "https://aisdemohubrtd4.services.ai.azure.com/api/projects/first-foundry-project"
-os.environ["AGENT_NAME"] = "myRagAgent"
+os.environ["AGENT_NAME"] = "trail-guide-agent"
 # Read instructions from prompt file
 prompt_file = Path(__file__).parent / 'prompts' / 'v4_optimized_concise.txt'
 with open(prompt_file, 'r') as f:
